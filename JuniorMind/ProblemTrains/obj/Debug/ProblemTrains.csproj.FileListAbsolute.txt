@@ -1,0 +1,5 @@
+C:\Users\Amigea\Documents\GitHub\JuniorMind\JuniorMind\ProblemTrains\bin\Debug\ProblemTrains.dll
+C:\Users\Amigea\Documents\GitHub\JuniorMind\JuniorMind\ProblemTrains\bin\Debug\ProblemTrains.pdb
+C:\Users\Amigea\Documents\GitHub\JuniorMind\JuniorMind\ProblemTrains\obj\Debug\ProblemTrains.csprojResolveAssemblyReference.cache
+C:\Users\Amigea\Documents\GitHub\JuniorMind\JuniorMind\ProblemTrains\obj\Debug\ProblemTrains.dll
+C:\Users\Amigea\Documents\GitHub\JuniorMind\JuniorMind\ProblemTrains\obj\Debug\ProblemTrains.pdb
