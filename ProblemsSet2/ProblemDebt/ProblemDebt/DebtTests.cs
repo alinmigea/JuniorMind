@@ -21,6 +21,13 @@ namespace ProblemDebt
         }
 
         [TestMethod]
+        public void DebtTwoHundredAndTen()
+        {
+            double debt = CalculateDebtToPay(11, 200);
+            Assert.AreEqual(210, debt);
+        }
+
+        [TestMethod]
         public void OneThousandAndTenHundreds()
         {
             double debt = CalculateDebtToPay(34, 1000);
@@ -33,17 +40,22 @@ namespace ProblemDebt
             //if this will be needed then I'll set just a margin for the last condition
             if ((daysLate >= 1) && (daysLate <= 10))
             {
-                return rent + CalculatePercentageFromSum(2, rent);
+                return CalculatePenalty(2, rent);
             }
-            else if ((daysLate > 10) && (daysLate <= 30))
+            if ((daysLate > 10) && (daysLate <= 30))
             {
-                return rent + CalculatePercentageFromSum(5, rent);
+                return CalculatePenalty(5, rent);
             }
-            else if ((daysLate > 30) && (daysLate <= 40))
+            if ((daysLate > 30) && (daysLate <= 40))
             {
-                return rent + CalculatePercentageFromSum(10, rent);
+                return CalculatePenalty(10, rent);
             }
             return rent;
+        }
+
+        double CalculatePenalty(int penaltyPercentage, int sum)
+        {
+            return sum + CalculatePercentageFromSum(penaltyPercentage, sum);
         }
 
         double CalculatePercentageFromSum(int percentage, int sum)
