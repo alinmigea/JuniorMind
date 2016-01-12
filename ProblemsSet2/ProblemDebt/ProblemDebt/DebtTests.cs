@@ -51,14 +51,11 @@ namespace ProblemDebt
             {
                 return CalculatePenalty(2, amount);
             }
-            else if (noOfDays <= 30)
+            if (noOfDays <= 30)
             {
                 return CalculatePenalty(5, amount);
             }
-            else
-            {
-                return CalculatePenalty(10, amount);
-            }
+            return CalculatePenalty(10, amount);
         }
 
         double CalculatePenalty(int penaltyPercentage, int sum)
