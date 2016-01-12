@@ -45,10 +45,13 @@ namespace ProblemDebt
             return rent;
         }
 
+        double CalculateDebtDependingOnRange(int noOfDays, int amount)
         {
+            if (noOfDays <= 10)
             {
                 return CalculatePenalty(2, amount);
             }
+            else if (noOfDays <= 30)
             {
                 return CalculatePenalty(5, amount);
             }
