@@ -36,21 +36,26 @@ namespace ProblemDebt
 
         double CalculateDebtToPay(int daysLate, int rent)
         {
-            //the number of late pay days in not greater then 40,
+            //the number of late pay days is between 1 and 40,
             //if this will be needed then I'll set just a margin for the last condition
-            if ((daysLate >= 1) && (daysLate <= 10))
+            if ((daysLate >= 1) && (daysLate <= 40))
             {
-                return CalculatePenalty(2, rent);
-            }
-            if ((daysLate > 10) && (daysLate <= 30))
-            {
-                return CalculatePenalty(5, rent);
-            }
-            if ((daysLate > 30) && (daysLate <= 40))
-            {
-                return CalculatePenalty(10, rent);
+                return CalculateDebtDependingOnRange(daysLate, rent);
             }
             return rent;
+        }
+
+        {
+            {
+                return CalculatePenalty(2, amount);
+            }
+            {
+                return CalculatePenalty(5, amount);
+            }
+            else
+            {
+                return CalculatePenalty(10, amount);
+            }
         }
 
         double CalculatePenalty(int penaltyPercentage, int sum)
