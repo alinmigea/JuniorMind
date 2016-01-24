@@ -65,11 +65,23 @@ namespace ProblemRomanNumbers
         string GenerateRomanNumberFromArabic(int entryNumber)
         {
             string roNumber = "";
-            //first nine numbers
-            string[] firstDigit = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-            //the first nine decimal numbers
-            string[] secondDigit = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
 
+            //first nine numbers
+            string[] firstDigit = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+            //the first nine decimal numbers
+            string[] secondDigit = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+            //the single condtion that the number is 100
+            string[] thirdDigit = {"", "C" };
+
+            int firstNumber = entryNumber % 10;
+            entryNumber = entryNumber / 10;
+            int secondNumber = entryNumber % 10;
+            entryNumber = entryNumber / 10;
+            int thirdNumber = entryNumber % 10;
+
+            roNumber = roNumber + thirdDigit[thirdNumber] + secondDigit[secondNumber] + firstDigit[firstNumber];
+
+            /*
             if (entryNumber > 99)
             {
                 return "C";
@@ -86,7 +98,8 @@ namespace ProblemRomanNumbers
             if (entryNumber > 0)
             {
                 roNumber += firstDigit[entryNumber - 1];
-            }
+            }*/
+
             return roNumber;
         }
     }
