@@ -72,21 +72,21 @@ namespace ProblemExcel
         [TestMethod]
         public void SevenHoundredAndTwentyEightColumn()
         {
-            string column = GetColumnStringAfterNumber(728);
+            string column = GetColumnStringAfterNumber(702);
             Assert.AreEqual("ZZ", column);
         }
 
         [TestMethod]
         public void SevenHoundredAndTwentyNineColumn()
         {
-            string column = GetColumnStringAfterNumber(729);
+            string column = GetColumnStringAfterNumber(703);
             Assert.AreEqual("AAA", column);
         }
 
         [TestMethod]
         public void SevenHoundredAndThirtyColumn()
         {
-            string column = GetColumnStringAfterNumber(730);
+            string column = GetColumnStringAfterNumber(704);
             Assert.AreEqual("AAB", column);
         }
 
@@ -94,21 +94,6 @@ namespace ProblemExcel
         {
             string columnCharacters = "";
 
-            // situation for the number from [1-26]
-            /*if (columnNumber < 27)
-            {
-                columnCharacters = GetAssociateCharAfterAsciiNumbers(columnNumber - 1) + columnCharacters;
-                return columnCharacters;
-            }*/
-
-            //fix for the number > 100 because of the second character.
-            int flag = 0;
-            if (columnNumber > 100)
-            {
-                flag = 1;
-            }
-
-            //if it passed the first if then the number is greater then 26
             columnNumber -= 1;
             do
             {
@@ -116,12 +101,7 @@ namespace ProblemExcel
                 columnNumber = columnNumber / 26 - 1;
 
                 columnCharacters = GetAssociateCharAfterAsciiNumbers(digit) + columnCharacters;
-                
-                //the fix for the second character
-                if (columnNumber > 0 && flag == 1)
-                {
-                    columnNumber -= 1;
-                }
+
             } while (columnNumber > -1);
 
             return columnCharacters;
@@ -129,7 +109,7 @@ namespace ProblemExcel
 
         string GetAssociateCharAfterAsciiNumbers(int asciiNumber)
         {
-            asciiNumber += 65;
+            asciiNumber += 'A';
             char character = (char)asciiNumber;
 
             return character.ToString();
